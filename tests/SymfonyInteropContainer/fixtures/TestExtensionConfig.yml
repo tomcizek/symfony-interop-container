@@ -1,0 +1,6 @@
+test:
+  foo: bar
+
+services:
+  'test_service':
+    class: 'TomCizek\SymfonyInteropContainer\Tests\TestBundle\TestService'
