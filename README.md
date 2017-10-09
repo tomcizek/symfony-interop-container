@@ -19,7 +19,9 @@ something you need to define in your extension.
 ## 1) Install this library through composer
 `composer require tomcizek/symfony-interop-container`
 
-## 2) Create your Extension, for example:
+## 2) Register SymfonyInteropContainerBundle in your extension
+
+## 3) Create your Extension, for example:
 
 ````````
 class TestExtension extends AbstractInteropExtension
