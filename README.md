@@ -23,7 +23,7 @@ something you need to define in your extension.
 
 ## 3) Create your Extension, for example:
 
-````````
+```php
 class TestExtension extends AbstractInteropExtension
 {
 	public function load(array $configs, ContainerBuilder $containerBuilder)
@@ -55,7 +55,7 @@ class TestExtension extends AbstractInteropExtension
 		parent::process($containerBuilder);
 	}
 }
-````````
+```
 
 ## Contribute
 
