@@ -61,7 +61,11 @@ class SymfonyInteropContainer implements ContainerInterface
 	 */
 	public function has($key)
 	{
-		return (bool)$this->tryToGetByKey($key);
+		try {
+			return (bool)$this->tryToGetByKey($key);
+		} catch (NotFoundException $e) {
+			return false;
+		}
 
 	}
 

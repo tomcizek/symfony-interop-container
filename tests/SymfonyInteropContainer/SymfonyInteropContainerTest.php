@@ -13,6 +13,7 @@ use TomCizek\SymfonyInteropContainer\Tests\TestBundle\TestService;
 class SymfonyInteropContainerTest extends SymfonyInteropContainerTestCase
 {
 	const FIXTURE_CONGIGS_DIR = __DIR__ . '/fixtures/';
+
 	/** @var SymfonyInteropContainer */
 	private $interopContainer;
 
@@ -38,11 +39,11 @@ class SymfonyInteropContainerTest extends SymfonyInteropContainerTestCase
 		$this->whenAskInteropContainerWhetherHasKey(new DateTime());
 	}
 
-	public function testHas_NotExistingService_ShouldThrowNotFoundException()
+	public function testHas_NotExistingService_ShouldReturnFalse()
 	{
-		$this->willThrowException(NotFoundExceptionInterface::class);
+		$hasConfig = $this->whenAskInteropContainerWhetherHasKey('not_existing_service');
 
-		$this->whenAskInteropContainerWhetherHasKey('not_existing_service');
+		$this->thenResultIsFalse($hasConfig);
 	}
 
 	public function testHas_ConfigKey_ShouldReturnTrue()
@@ -112,6 +113,11 @@ class SymfonyInteropContainerTest extends SymfonyInteropContainerTestCase
 	private function thenResultIsTrue($has): void
 	{
 		self::assertTrue($has);
+	}
+
+	private function thenResultIsFalse($has): void
+	{
+		self::assertFalse($has);
 	}
 
 	private function whenGetFromInteropContainerByKey($key)
