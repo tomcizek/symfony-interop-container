@@ -14,6 +14,7 @@ class SymfonyInteropContainer implements ContainerInterface
 	 * @var ParameterBag
 	 */
 	private $config;
+
 	/**
 	 * @var Container
 	 */

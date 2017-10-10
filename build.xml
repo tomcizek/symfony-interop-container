@@ -3,9 +3,7 @@
 
     <target name="build" depends="check"/>
 
-    <target name="check" depends="
-		tests
-	"/>
+    <target name="check" depends="tests"/>
 
     <target name="tests">
         <exec

@@ -20,7 +20,7 @@ class SymfonyInteropContainerExtension extends Extension
 
 	private function registerInteropContainer(ContainerBuilder $containerBuilder): void
 	{
-		$interopContainerDefinition = new Definition(SymfonyInteropContainer::class);
+		$interopContainerDefinition = new Definition();
 		$interopContainerDefinition->setClass(SymfonyInteropContainer::class);
 		$interopContainerDefinition->addArgument(new Reference('service_container'));
 

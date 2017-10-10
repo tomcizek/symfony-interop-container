@@ -6,6 +6,7 @@ class ConfigFile
 {
 	/** @var string */
 	private $path;
+
 	/** @var string */
 	private $type;
 
